@@ -25,14 +25,12 @@ SECRET_KEY = 'django-insecure-6h-1w8=!xvtnl72t6t7u4lf=fa*93xn=&5o2y6k_z-u7d9@t36
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["http://webtalestoday.ru", "http://revolutionworkparty.ru",
-                 "https://revolutionworkparty.ru", 'http://127.0.0.1', 'http://0.0.0.0',
-                 'http://0.0.0.0:9999', 'http://localhost', 'http://*']
+ALLOWED_HOSTS = ["http://rwp.red", "https://rwp.red", 'http://127.0.0.1', 'http://0.0.0.0',
+                 'http://0.0.0.0:9999', 'http://localhost', 'http://*', '127.0.0.1']
 
 CORS_ALLOWED_ORIGINS = [
-    "http://webtalestoday.ru",
-    "http://revolutionworkparty.ru",
-    "https://revolutionworkparty.ru",
+    "http://rwp.red",
+    "https://rwp.red",
     'http://localhost',
     'http://localhost:9999',
     'http://0.0.0.0',

@@ -6,7 +6,7 @@ from .serializers import ArticleTinySerializer, ArticleFullSerializer
 @api_view(["GET"])
 def ArticlesView(request):
     if request.method == "GET":
-        object_list = Article.objects.all()
+        object_list = Article.objects.all().order_by('datetime')
         serializer = ArticleTinySerializer(object_list, many=True)
         return Response(serializer.data)
 
