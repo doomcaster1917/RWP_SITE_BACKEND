@@ -6,8 +6,8 @@ from .models import Article
 class ArticleAdmin(admin.ModelAdmin):
     model = Article
     fields = ('name', 'slug', 'title', 'seo_description',
-              'seo_keywords', 'seo_title', 'full_description',
-              'image', 'priority', 'image_tag')
+              'seo_keywords', 'full_description',
+              'image', 'priority', 'image_tag', 'datetime')
     readonly_fields = ('image_tag',)
     list_display = ('name', 'title', 'image_tag',)
 
