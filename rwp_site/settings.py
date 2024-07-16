@@ -28,6 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = ["http://rwp.red", "https://rwp.red", 'http://127.0.0.1', 'http://0.0.0.0',
                  'http://0.0.0.0:9999', 'http://localhost', 'http://*', '127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = ['https://rwp.red']
+
 CORS_ALLOWED_ORIGINS = [
     "http://rwp.red",
     "https://rwp.red",
