@@ -17,11 +17,8 @@ class Article(models.Model):
     class Meta:
         verbose_name_plural = "Статьи"
         verbose_name = "Статья"
+        ordering = ['priority']
 
-    # def image_tag(self):
-    #     if self.image:
-    #         return mark_safe(f'<img src="{self.image.url}" style="width: 45px; height:45px;" />')
-    #     else:
-    #         return 'No Image Found'
-
-    # image_tag.short_description = 'Image'
+class BackUps(models.Model):
+    url = models.CharField(max_length=120, unique=True)
+    datetime = models.DateField(auto_now_add=True)
