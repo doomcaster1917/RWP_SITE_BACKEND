@@ -36,7 +36,7 @@ class BackUpsAdmin(admin.ModelAdmin):
         return custom_urls + urls
 
     def make_backup(self, request):
-        os.system(f'python manage.py dumpdata --format json -e contenttypes -e articles > media/data.json')
+        os.system(f'venv/bin/python manage.py dumpdata --format json -e contenttypes -e articles > media/data.json')
         os.system(f'rm media/archive.tar')
         os.system(f'tar -cvf media/archive.tar media/')
         return HttpResponse(f'<a href="/media/archive.tar">Link</a>')
