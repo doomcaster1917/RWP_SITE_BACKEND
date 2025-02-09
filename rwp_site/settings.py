@@ -25,16 +25,16 @@ SECRET_KEY = 'django-insecure-6h-1w8=!xvtnl72t6t7u4lf=fa*93xn=&5o2y6k_z-u7d9@t36
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["http://rwp.red", "https://rwp.red", 'http://127.0.0.1', 'http://0.0.0.0',
-                 'http://0.0.0.0:9999', 'http://localhost', 'http://*', '127.0.0.1']
+ALLOWED_HOSTS = ["http://cwdis.ru", "https://cwdis.ru", 'https://www.cwdis.ru', 'http://0.0.0.0',
+                 'https://api.cwdis.ru', 'http://api.cwdis.ru', 'http://*', 'api.cwdis.ru']
 
-CSRF_TRUSTED_ORIGINS = ['https://rwp.red', 'https://api.rwp.red']
+CSRF_TRUSTED_ORIGINS = ['https://cwdis.ru', 'https://api.cwdis.ru']
 
 CORS_ALLOWED_ORIGINS = [
-    "http://rwp.red",
-    "https://rwp.red",
-    'http://localhost',
-    'http://localhost:9999',
+    "http://cwdis.ru",
+    "https://cwdis.ru",
+    'http://api.cwdis.ru',
+    'https://api.cwdis.ru',
     'http://0.0.0.0',
     'http://0.0.0.0:9999',
     'http://*'
@@ -71,7 +71,7 @@ ROOT_URLCONF = 'rwp_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -93,11 +93,11 @@ WSGI_APPLICATION = 'rwp_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get("POSTGRES_NAME"),
-        'USER': os.environ.get("POSTGRES_USER"),
-        'PASSWORD': os.environ.get("POSTGRES_PASSWORD"),
-        'HOST': os.environ.get("POSTGRES_HOST"),
-        'PORT': os.environ.get("POSTGRES_PORT"),
+        'NAME': 'cwdis',
+        'USER': 'postgres',
+        'PASSWORD': '89908990aSa',
+        'HOST': 'localhost',
+        'PORT': 5432,
     }
 }
 
