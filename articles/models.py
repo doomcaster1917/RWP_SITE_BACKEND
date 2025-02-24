@@ -17,7 +17,7 @@ class Article(models.Model):
     class Meta:
         verbose_name_plural = "Статьи"
         verbose_name = "Статья"
-        ordering = ['priority']
+        ordering = ('-datetime', )
 
 class BackUps(models.Model):
     url = models.CharField(max_length=120, unique=True)

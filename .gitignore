@@ -3,3 +3,4 @@
 /articles/migrations
 /media
 .env
+/rwp_site/settings.py

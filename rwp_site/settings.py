@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-6h-1w8=!xvtnl72t6t7u4lf=fa*93xn=&5o2y6k_z-u7d9@t36
 DEBUG = True
 
 ALLOWED_HOSTS = ["http://cwdis.ru", "https://cwdis.ru", 'https://www.cwdis.ru', 'http://0.0.0.0',
-                 'https://api.cwdis.ru', 'http://api.cwdis.ru', 'http://*', 'api.cwdis.ru']
+                 'https://api.cwdis.ru', 'http://api.cwdis.ru', 'http://*', 'api.cwdis.ru', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = ['https://cwdis.ru', 'https://api.cwdis.ru']
 
@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'rwp_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cwdis',
+        'NAME':'cwdis',
         'USER': 'postgres',
         'PASSWORD': '89908990aSa',
         'HOST': 'localhost',
