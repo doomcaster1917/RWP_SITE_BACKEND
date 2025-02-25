@@ -6,7 +6,7 @@ from rest_framework import status
 
 @api_view(["GET"])
 def ArticlesView(request):
-    object_list = Article.objects.all().order_by('datetime')
+    object_list = Article.objects.all().order_by('-priority')
     serializer = ArticleTinySerializer(object_list, many=True)
     return Response(serializer.data)
 

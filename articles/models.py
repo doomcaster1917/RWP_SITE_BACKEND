@@ -9,7 +9,7 @@ class Article(models.Model):
     full_description = models.TextField(blank=True, verbose_name="Полное описание")
     image = models.ImageField(verbose_name="Изображение статьи", blank=True)
     priority = models.PositiveIntegerField(default=0)
-    datetime = models.DateField(auto_now_add=True)
+    datetime = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
         return str(self.name)
@@ -17,7 +17,7 @@ class Article(models.Model):
     class Meta:
         verbose_name_plural = "Статьи"
         verbose_name = "Статья"
-        ordering = ('-datetime', )
+        ordering = ('-datetime',)
 
 class BackUps(models.Model):
     url = models.CharField(max_length=120, unique=True)
