@@ -19,10 +19,12 @@ def ArticleFullView(request):
     if object_list:
         serializer = ArticleFullSerializer(object_list, many=True)
         data = serializer.data
+        base_url = 'https://api.kofulso.ru'
         for item in data:
             if 'full_description' in item:
                 if is_html(item['full_description']):
-                    item['full_description'] = md(item['full_description'])  # Конвертируем content в Markdown
+                    markdown_content = md(item['full_description'])
+                    item['full_description'] = markdown_content.replace('/media/', f'{base_url}/media/')
         return Response(data)
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
