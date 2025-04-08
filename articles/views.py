@@ -15,13 +15,12 @@ def ArticlesView(request):
 @api_view(["GET"])
 def ArticleFullView(request):
     object_list = Article.objects.filter(slug=request.GET["slug"])
-    serializer = ArticleFullSerializer(object_list, many=True)
-
-    data = serializer.data
-    for item in data:
-        item['content'] = md(item['content'])
 
     if object_list:
+        serializer = ArticleFullSerializer(object_list, many=True)
+        data = serializer.data
+        for item in data:
+            item['full_description'] = md(item['full_description'])  # Конвертируем content в Markdown
         return Response(data)
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
