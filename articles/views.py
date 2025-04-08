@@ -20,8 +20,12 @@ def ArticleFullView(request):
         serializer = ArticleFullSerializer(object_list, many=True)
         data = serializer.data
         for item in data:
-            item['full_description'] = md(item['full_description'])  # Конвертируем content в Markdown
+            if 'full_description' in item:
+                if is_html(item['full_description']):
+                    item['full_description'] = md(item['full_description'])  # Конвертируем content в Markdown
         return Response(data)
     else:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
+def is_html(text):
+    return '<' in text and '>' in text
