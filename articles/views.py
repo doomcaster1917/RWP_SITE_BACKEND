@@ -19,7 +19,7 @@ def ArticleFullView(request):
     if object_list:
         serializer = ArticleFullSerializer(object_list, many=True)
         data = serializer.data
-        base_url = 'https://api.kofulso.ru'
+        base_url = 'https://api.cwdis.ru'
         for item in data:
             if 'full_description' in item:
                 if is_html(item['full_description']):
