@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'articles',
     'rest_framework',
     "corsheaders",
+    'django_ckeditor_5',
+    # 'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +148,16 @@ MEDIA_URL = 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATE_INPUT_FORMATS = '%Y-%m-%d %H:%M:%S'
+
+CKEDITOR_5_FILE_UPLOAD_PERMISSION = "staff"  # Ограничение загрузки для staff-пользователей
+CKEDITOR_5_CUSTOM_CSS = None  # Опционально, для стилизации
+CKEDITOR_5_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
+
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'imageUpload', 'blockQuote'],
+        'image': {
+            'toolbar': ['imageTextAlternative', 'imageStyle:full', 'imageStyle:side'],
+        },
+    },
+}

@@ -1,4 +1,5 @@
 from django.db import models
+from django_ckeditor_5.fields import CKEditor5Field
 
 class Article(models.Model):
     slug = models.CharField(max_length=120, unique=True, verbose_name="Английское название")
@@ -6,7 +7,7 @@ class Article(models.Model):
     title = models.CharField(max_length=130, blank=True, verbose_name="Краткое описание")
     seo_description = models.CharField(max_length=1350, blank=True, verbose_name="СЕО описание")
     seo_keywords = models.CharField(max_length=1350, blank=True, verbose_name="СЕО ключевые слова")
-    full_description = models.TextField(blank=True, verbose_name="Полное описание")
+    full_description = CKEditor5Field(blank=True, verbose_name="Полное описание", config_name='default')
     image = models.ImageField(verbose_name="Изображение статьи", blank=True)
     priority = models.PositiveIntegerField(default=0)
     datetime = models.DateTimeField(auto_now_add=True)
